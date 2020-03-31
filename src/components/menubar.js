@@ -69,6 +69,14 @@ export default function MenuBar() {
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+        console.log(event.target);
+        window.location.href =
+            window.location.href.substring(
+                0,
+                window.location.href.indexOf("/") + 1
+            ) +
+            "#" +
+            event.target.innerHTML.toLowerCase();
     };
 
     function handleDrawerOpen() {
@@ -79,7 +87,7 @@ export default function MenuBar() {
         setOpen(false);
     }
     return (
-        <Box>
+        <Box height="64px">
             <AppBar
                 position="fixed"
                 elevation={0}

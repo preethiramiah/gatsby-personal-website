@@ -12,7 +12,8 @@
         "gh-pages": "^2.2.0",
         "react": "latest",
         "react-dom": "latest",
-        "react-helmet": "latest"
+        "react-helmet": "latest",
+        "react-material-ui-carousel": "^1.1.1"
     },
     "scripts": {
         "develop": "gatsby develop",
