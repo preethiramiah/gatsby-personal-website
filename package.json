@@ -26,7 +26,6 @@
         "build": "gatsby build",
         "serve": "gatsby serve",
         "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
-        "deploy:github": "npm run medium && npm run build && node ./scripts/deploy-github",
-        "medium": "node medium.js"
+        "deploy:github": "npm run build && node ./scripts/deploy-github"
     }
 }
