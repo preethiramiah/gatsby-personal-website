@@ -22,6 +22,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import ListIcon from "@material-ui/icons/ViewList";
+import { getName } from "../singletons/pagedata";
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
@@ -69,7 +70,6 @@ export default function MenuBar() {
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
-        console.log(event.target);
         window.location.href =
             window.location.href.substring(
                 0,
@@ -100,7 +100,7 @@ export default function MenuBar() {
                         <IconButton
                             color="inherit"
                             aria-label="Open drawer"
-                            onClick={handleDrawerOpen}
+                            onClick={() => handleDrawerOpen()}
                             edge="start"
                             className={clsx(
                                 classes.menuButton,
@@ -111,13 +111,15 @@ export default function MenuBar() {
                         </IconButton>
                     </Hidden>
                     <Typography variant="h6" color="inherit">
-                        Preethi Ramiah
+                        {getName()}
                     </Typography>
                     <Hidden mdDown>
                         <Tabs
                             variant="fullWidth"
                             value={value}
-                            onChange={handleChange}
+                            onChange={(event, newValue) =>
+                                handleChange(event, newValue)
+                            }
                             aria-label="nav tabs example"
                         >
                             <Tab label="Home" />
@@ -140,7 +142,7 @@ export default function MenuBar() {
                     }}
                 >
                     <div className={classes.drawerHeader}>
-                        <IconButton onClick={handleDrawerClose}>
+                        <IconButton onClick={() => handleDrawerClose()}>
                             <ChevronLeftIcon />
                         </IconButton>
                     </div>

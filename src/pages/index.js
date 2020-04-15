@@ -1,10 +1,13 @@
 import React from "react";
 import { Container, Box, Typography } from "@material-ui/core";
-import Link from "../components/Link";
+import Link from "../components/link";
 import Copyright from "../components/copyright";
 import MenuBar from "../components/menubar";
 import Home from "../components/home";
 import Resume from "../components/resume";
+import Portfolio from "../components/portfolio";
+import Blog from "../components/blog";
+import Contact from "../components/contact";
 
 export default function Index() {
     return (
@@ -17,29 +20,14 @@ export default function Index() {
                 <Box id="resume">
                     <Resume />
                 </Box>
-                <Box id="portfolio" height="400px">
-                    <Typography variant="h4" component="h1" gutterBottom>
-                        Gatsby v4-beta example
-                    </Typography>
-                    <Link to="/about" color="secondary">
-                        Go to the about page
-                    </Link>
+                <Box id="portfolio">
+                    <Portfolio />
                 </Box>
-                <Box id="blog" height="400px">
-                    <Typography variant="h4" component="h1" gutterBottom>
-                        Gatsby v4-beta example
-                    </Typography>
-                    <Link to="/about" color="secondary">
-                        Go to the about page
-                    </Link>
+                <Box id="blog">
+                    <Blog />
                 </Box>
                 <Box id="contact" height="400px">
-                    <Typography variant="h4" component="h1" gutterBottom>
-                        Gatsby v4-beta example
-                    </Typography>
-                    <Link to="/about" color="secondary">
-                        Go to the about page
-                    </Link>
+                    <Contact />
                 </Box>
                 <Copyright />
             </Box>

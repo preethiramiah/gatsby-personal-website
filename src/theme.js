@@ -5,15 +5,20 @@ const theme = createMuiTheme({
     palette: {
         type: "dark",
         primary: {
-            main: "#556cd6"
+            main: "#556cd6",
         },
         secondary: {
-            main: "#19857b"
+            main: "#19857b",
         },
         error: {
-            main: red.A400
-        }
-    }
+            main: red.A400,
+        },
+    },
+    typography: {
+        caption: {
+            color: "rgba(0, 0, 0, 0.7)",
+        },
+    },
 });
 
 export default theme;
