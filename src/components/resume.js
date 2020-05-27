@@ -166,6 +166,7 @@ export default function Resume () {
                   __html: work.description
                 }}
               />
+              {/* <Typography variant='body2'>{work.description}</Typography> */}
             </Box>
           )
         })}
