@@ -1,4 +1,4 @@
-# Gatsby example
+# Preethi Personal Website - Built using Gatsby, Material-UI
 
 ## How to use
 
