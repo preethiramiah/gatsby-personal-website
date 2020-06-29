@@ -16,7 +16,17 @@ const useStyles = makeStyles(theme => {
       display: 'flex',
       justifyContent: 'center',
       paddingTop: theme.spacing(10),
-      paddingBottom: theme.spacing(10)
+      paddingBottom: theme.spacing(10),
+      '& .MuiButton-root': {
+        border: '3px solid #11ABB0',
+        fontWeight: 'bold'
+      },
+      '& .MuiButton-root:hover': {
+        backgroundColor: '#11ABB0'
+      },
+      '& .MuiButton-text': {
+        padding: '10px 20px'
+      }
     },
     carousel: {
       width: '100%'

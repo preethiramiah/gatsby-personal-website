@@ -175,6 +175,19 @@ const pageData = {
             'The world of fashion and fine arts in New York really took me by surprise, and photography has helped me through a period of personal turmoil. I am glad when people like my portfolio, but its aim is - or was - to keep me at peace - Cole Sprouse.',
     portfolio: [
       {
+        name: 'Outlier.org',
+        link: 'http://outlier.org/',
+        banner: 'images/portfolio/outlier.jpg',
+        details: {
+          title:
+            'The world\'s best for-credit online courses, in tie up with University of Pittsburg',
+          description:
+            '<p>Outlier (from the co-founder of MasterClass) has developed high-quality, university-level courses, taught online by some of the most celebrated educators in their respective fields. </p>',
+          achievements:
+            'Embedding videos using Wistia, rendering data from Drupal/DatoCMS. TDD Development using jest and enzyme.'
+        }
+      },
+      {
         name: 'FickleIt',
         link: 'https://fickleit.com/',
         banner: 'images/portfolio/fickle.webp',

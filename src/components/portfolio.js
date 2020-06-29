@@ -23,15 +23,31 @@ const useStyles = makeStyles((theme) => {
       backgroundImage: "url('" + portfolioData.backgroundImage + "')",
       display: 'flex',
       flexDirection: 'column',
+      alignItems: 'center',
       paddingTop: theme.spacing(10),
-      paddingBottom: theme.spacing(10),
-      '& > .MuiTypography-root': {
-        color: theme.typography.caption.color
-      }
+      paddingBottom: theme.spacing(10)
     },
     flexColumn: {
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      alignItems: 'center'
+    },
+    portfolioContent: {
+      maxWidth: theme.customCss.applicationMaxWidth,
+      width: '100%'
+    },
+    description: {
+      color: '#999999',
+      fontSize: '14px',
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2)
+    },
+    intro: {
+      color: '#a4a4a4',
+      fontSize: '22px',
+      fontWeight: 'normal',
+      marginBottom: theme.spacing(2),
+      textAlign: 'center'
     },
     media: {
       height: 200,
@@ -52,7 +68,7 @@ const useStyles = makeStyles((theme) => {
         maxWidth: '45vw'
       },
       [theme.breakpoints.up('lg')]: {
-        maxWidth: '32vw'
+        maxWidth: '23vw'
       }
     }
   }
@@ -63,86 +79,88 @@ export default function Portfolio () {
 
   return (
     <Box className={classes.portfolioBackground}>
-      <Typography variant='h4'>Portfolio</Typography>
-      <Typography>
-                        Check out some interesting projects I have been a part of.
-      </Typography>
-      <Typography variant='h6'>{portfolioData.quote}</Typography>
-      <Box display='flex' flexWrap='wrap'>
-        {portfolioData.portfolio.map((project, index) => {
-          return (
-            <Box key={index.toString()} mr={1} mb={1}>
-              <Card className={classes.cardStyle}>
-                <CardActionArea
-                  onClick={() =>
-                    window.open(project.link, '_blank')}
-                >
-                  <CardMedia
-                    className={classes.media}
-                    image={project.banner}
-                    title={project.name}
-                  />
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant='h5'
-                      component='h2'
-                    >
-                      {project.name}
-                    </Typography>
-                    <Typography
-                      variant='body2'
-                      color='textSecondary'
-                      component='p'
-                    >
-                      {project.details.title}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  <ExpansionPanel>
-                    <ExpansionPanelSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls='panel1a-content'
-                      id='panel1a-header'
-                    >
+      <Box className={`${classes.flexColumn} ${classes.portfolioContent}`}>
+        <Typography variant='h4'>Portfolio</Typography>
+        <Typography className={classes.description}>
+        Check out some interesting projects I have been a part of.
+        </Typography>
+        <Typography className={classes.intro} variant='h6'>{portfolioData.quote}</Typography>
+        <Box display='flex' flexWrap='wrap'>
+          {portfolioData.portfolio.map((project, index) => {
+            return (
+              <Box key={index.toString()} mr={1} mb={1}>
+                <Card className={classes.cardStyle}>
+                  <CardActionArea
+                    onClick={() =>
+                      window.open(project.link, '_blank')}
+                  >
+                    <CardMedia
+                      className={classes.media}
+                      image={project.banner}
+                      title={project.name}
+                    />
+                    <CardContent>
                       <Typography
-                        className={classes.heading}
+                        gutterBottom
+                        variant='h5'
+                        component='h2'
                       >
-                            More Details
+                        {project.name}
                       </Typography>
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails
-                      className={classes.flexColumn}
-                    >
-                      <Box
+                      <Typography
+                        variant='body2'
                         color='textSecondary'
-                        variant='caption'
-                        dangerouslySetInnerHTML={{
-                          __html:
+                        component='p'
+                      >
+                        {project.details.title}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <ExpansionPanel>
+                      <ExpansionPanelSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls='panel1a-content'
+                        id='panel1a-header'
+                      >
+                        <Typography
+                          className={classes.heading}
+                        >
+                            More Details
+                        </Typography>
+                      </ExpansionPanelSummary>
+                      <ExpansionPanelDetails
+                        className={classes.flexColumn}
+                      >
+                        <Box
+                          color='textSecondary'
+                          variant='caption'
+                          dangerouslySetInnerHTML={{
+                            __html:
                                 project.details
                                   .description
-                        }}
-                      />
-                      <Typography variant='h6'>
+                          }}
+                        />
+                        <Typography variant='h6'>
                             Achievements
-                      </Typography>
-                      <Box
-                        color='textSecondary'
-                        variant='caption'
-                        dangerouslySetInnerHTML={{
-                          __html:
+                        </Typography>
+                        <Box
+                          color='textSecondary'
+                          variant='caption'
+                          dangerouslySetInnerHTML={{
+                            __html:
                                 project.details
                                   .achievements
-                        }}
-                      />
-                    </ExpansionPanelDetails>
-                  </ExpansionPanel>
-                </CardActions>
-              </Card>
-            </Box>
-          )
-        })}
+                          }}
+                        />
+                      </ExpansionPanelDetails>
+                    </ExpansionPanel>
+                  </CardActions>
+                </Card>
+              </Box>
+            )
+          })}
+        </Box>
       </Box>
     </Box>
   )

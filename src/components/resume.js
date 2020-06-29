@@ -38,7 +38,10 @@ const useStyles = makeStyles((theme) => {
     },
     flexColumn: {
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      '& .MuiButton-root': {
+        marginTop: theme.spacing(2)
+      }
     },
     centerAlign: {
       alignItems: 'center'
@@ -75,7 +78,7 @@ export default function Resume () {
           <Button target='_blank' href={resumeData.resumeLink}>
                         Download Resume
           </Button>
-          <Box display='flex' my={1}>
+          <Box display='flex' mt={2}>
             {resumeData.socialLinks.map((socialLink) => {
               const IconComponent = linkName[socialLink.name]
               return (
